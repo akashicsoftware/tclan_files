@@ -12,9 +12,9 @@ ic.configureOutput(includeContext=True)
 load_dotenv(override=True)
 
 debug_config = {
-    "is_debug_date": True,  # True=指定日での実行, False=実行日
+    "is_debug_date": False,  # True=指定日での実行, False=実行日
     "is_debug_to_line": False,  # True=ログ出力, False=LINEに通知
-    "is_debug_target_id": True,  # True=個人ユーザ, False=本番用チャンネル
+    "is_debug_target_id": False,  # True=個人ユーザ, False=本番用チャンネル
 }
 
 # 担当者のPDF
