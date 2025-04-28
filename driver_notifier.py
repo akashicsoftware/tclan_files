@@ -1,7 +1,7 @@
 """送迎メッセージを通知する."""
 import os
-from datetime import datetime
 import textwrap
+from datetime import datetime
 
 from dotenv import load_dotenv  # type: ignore
 from icecream import ic  # type: ignore
@@ -99,7 +99,8 @@ class DriverNotifier(LineNotifierBase):
                                 {
                                     "type": "uri",
                                     "label": "🚗当番表",
-                                    "uri": user_pdf_url
+                                    "uri":
+                                    DriverNotifier.add_timestamp_to_url(user_pdf_url)
                                 }
                             ]
                         }

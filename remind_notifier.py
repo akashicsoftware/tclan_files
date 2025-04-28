@@ -50,7 +50,7 @@ class RemindNotifier(LineNotifierBase):
                         {
                             "type": "uri",
                             "label": "📅年間予定",
-                            "uri": scr_pdf_url
+                            "uri": RemindNotifier.add_timestamp_to_url(scr_pdf_url)
                         }
                     ]
                 }
