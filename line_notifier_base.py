@@ -1,6 +1,7 @@
 """LINE通知の共通部."""
 
 import os
+import time
 
 import requests  # noqa: D100
 from dotenv import load_dotenv
@@ -55,3 +56,9 @@ class LineNotifierBase:
                 ic(f"メッセージが送信されました.: {msg}")
             else:
                 ic(f"エラーが発生しました.: {response.status_code}, {response.text}")
+
+    @staticmethod
+    def add_timestamp_to_url(url):
+        """timestampありURLへ更新."""
+        timestamp = int(time.time())
+        return f"{url}?ts={timestamp}"

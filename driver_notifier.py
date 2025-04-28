@@ -99,7 +99,8 @@ class DriverNotifier(LineNotifierBase):
                                 {
                                     "type": "uri",
                                     "label": "🚗当番表",
-                                    "uri": user_pdf_url
+                                    "uri":
+                                    DriverNotifier.add_timestamp_to_url(user_pdf_url)
                                 }
                             ]
                         }
