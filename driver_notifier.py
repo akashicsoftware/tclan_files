@@ -1,7 +1,7 @@
 """送迎メッセージを通知する."""
 import os
-from datetime import datetime
 import textwrap
+from datetime import datetime
 
 from dotenv import load_dotenv  # type: ignore
 from icecream import ic  # type: ignore
