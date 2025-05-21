@@ -71,12 +71,13 @@ class DriverNotifier(LineNotifierBase):
             to_channel_id (str): メッセージ送信先のチャンネルID（本番環境用）。
         """
         super().__init__(debug_config, token, to_channel_id)
+        self.debug_config = debug_config
 
 
     def create_msg(self):
         """メッセージ作成."""
         # 実行日.
-        if debug_config.get("is_debug_date", True):
+        if self.debug_config.get("is_debug_date", True):
             today = datetime(2025, 4, 28)
         else:
             today = datetime.today()
