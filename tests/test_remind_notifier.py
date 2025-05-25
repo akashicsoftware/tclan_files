@@ -2,7 +2,7 @@ import os
 import pytest
 from unittest.mock import patch, MagicMock
 
-from remind_notifier import RemindNotifier, scr_pdf_url
+from remind_notifier import RemindNotifier, scr_pdf_url, location_info_url
 
 
 @pytest.fixture
@@ -22,7 +22,7 @@ def test_create_msg_returns_expected_structure(dummy_env):
     - 返されるメッセージがリストである
     - "template" タイプである
     - altText, actionsなど必要なフィールドが正しく含まれている
-    - 年間予定リンクが正しく付加されている
+    - リンクが正しく付加されている
     """
     debug_config = {"is_debug_to_line": True, "is_debug_target_id": True}
     notifier = RemindNotifier(debug_config, "dummy_token", "dummy_channel_id")
@@ -32,10 +32,23 @@ def test_create_msg_returns_expected_structure(dummy_env):
     assert isinstance(messages, list)
     assert messages[0]["type"] == "template"
     assert "altText" in messages[0]
-    assert messages[0]["template"]["type"] == "buttons"
-    assert messages[0]["template"]["actions"][0]["type"] == "uri"
-    assert messages[0]["template"]["actions"][0]["label"] == "📅年間予定"
-    assert messages[0]["template"]["actions"][0]["uri"].startswith(scr_pdf_url)
+
+    template = messages[0]["template"]
+    assert template["type"] == "buttons"
+    assert "actions" in template
+    actions = template["actions"]
+
+    assert len(actions) == 2
+
+    # 🧭グラウンドの場所
+    assert actions[0]["type"] == "uri"
+    assert actions[0]["label"] == "🧭グラウンドの場所"
+    assert actions[0]["uri"].startswith(location_info_url)
+
+    # 📅年間予定
+    assert actions[1]["type"] == "uri"
+    assert actions[1]["label"] == "📅年間予定"
+    assert actions[1]["uri"].startswith(scr_pdf_url)
 
 
 @patch("remind_notifier.LineNotifierBase.notify")

@@ -15,6 +15,9 @@ debug_config = {
     "is_debug_to_line": False,  # True=ログ出力, False=LINEに通知
     "is_debug_target_id": False,  # True=個人ユーザ, False=本番用チャンネル
 }
+
+# グラウンド場所のURL
+location_info_url = "https://sites.google.com/view/tclan/home/location"
 # 年間スケジュールのPDF
 scr_pdf_url = "https://akashicsoftware.github.io/tclan_files/external_files/scr.pdf"
 
@@ -47,6 +50,11 @@ class RemindNotifier(LineNotifierBase):
                     "type": "buttons",
                     "text": msg,
                     "actions": [
+                        {
+                            "type": "uri",
+                            "label": "🧭グラウンドの場所",
+                            "uri": RemindNotifier.add_timestamp_to_url(location_info_url)
+                        },
                         {
                             "type": "uri",
                             "label": "📅年間予定",
