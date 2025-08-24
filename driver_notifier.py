@@ -41,7 +41,7 @@ user_mapping = [
     (datetime(2025,7,28), datetime(2025,8,3), "遠藤"),
     (datetime(2025,8,4), datetime(2025,8,10), "(6/8 森さんから変更で)小野"),
     (datetime(2025,8,11), datetime(2025,8,17), "伏黒"),
-    (datetime(2025,8,18), datetime(2025,8,24), "小野"),
+    (datetime(2025,8,18), datetime(2025,8,24), "(8/21 小野さんから変更で)荒木"),
     (datetime(2025,8,25), datetime(2025,8,31), "浅野"),
     (datetime(2025,9,1), datetime(2025,9,7), "若林"),
     (datetime(2025,9,8), datetime(2025,9,14), "(7/16 荒木さんから変更で)澤"),
@@ -55,7 +55,7 @@ user_mapping = [
     (datetime(2025,11,3), datetime(2025,11,9), "小野"),
     (datetime(2025,11,10), datetime(2025,11,16), "浅野"),
     (datetime(2025,11,17), datetime(2025,11,23), "若林"),
-    (datetime(2025,11,24), datetime(2025,11,30), "荒木"),
+    (datetime(2025,11,24), datetime(2025,11,30), "(8/21 荒木さんから変更で)小野"),
 ]
 
 class DriverNotifier(LineNotifierBase):
