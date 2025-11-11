@@ -1,9 +1,9 @@
 # ワークフロー名
 name: schedule_bot_remind
-on:
-  schedule:
+#on:
+#  schedule:
     # 定期実行する時間(JST：毎週水曜日 9:00実行)
-    - cron: '0 0 * * 3'
+#    - cron: '0 0 * * 3'
 # on:
 #   push:
 #     branches:

@@ -1,9 +1,9 @@
 # ワークフロー名
 name: schedule_bot_driver
-on:
-  schedule:
+#on:
+#  schedule:
     # 定期実行する時間(JST：毎週水曜日 18:00実行)
-    - cron: '0 9 * * 3'
+#    - cron: '0 9 * * 3'
 # on:
 #   push:
 #     branches:
