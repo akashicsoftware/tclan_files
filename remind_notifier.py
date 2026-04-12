@@ -17,9 +17,11 @@ debug_config = {
 }
 
 # グラウンド場所のURL
-location_info_url = "https://sites.google.com/view/tclan/home/location"
+spot_info_url = "https://sites.google.com/view/tclan/home/location"
 # 年間スケジュールのPDF
 scr_pdf_url = "https://akashicsoftware.github.io/tclan_files/external_files/scr.pdf"
+# 年間スケジュールのgoogle カレンダー
+scr_info_url = "https://sites.google.com/view/tclan/home/scr"
 
 class RemindNotifier(LineNotifierBase):
     """出欠回答メッセージクラス."""
@@ -53,12 +55,17 @@ class RemindNotifier(LineNotifierBase):
                         {
                             "type": "uri",
                             "label": "🧭グラウンドの場所",
-                            "uri": RemindNotifier.add_timestamp_to_url(location_info_url)
+                            "uri": RemindNotifier.add_timestamp_to_url(spot_info_url)
                         },
                         {
                             "type": "uri",
                             "label": "📅年間予定",
                             "uri": RemindNotifier.add_timestamp_to_url(scr_pdf_url)
+                        },
+                        {
+                            "type": "uri",
+                            "label": "Google カレンダー",
+                            "uri": RemindNotifier.add_timestamp_to_url(scr_info_url)
                         }
                     ]
                 }

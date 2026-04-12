@@ -14,6 +14,8 @@ github actionsのworkflowで実行中。
 | `LINE_GROUP_ID_DRIVER_CHANNEL`| 送迎通知に使うチャンネルID              |
 
 # グループIDの確認
+https://sananeblog.com/line-group-id/
+
 ## localtunnelで、check_line_group_id.pyを実行
 - sudo apt update
 - sudo apt install nodejs npm

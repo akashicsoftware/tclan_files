@@ -18,44 +18,37 @@ debug_config = {
 }
 
 # 担当者のPDF
-user_pdf_url = "https://akashicsoftware.github.io/tclan_files/external_files/202504to202511.pdf"
+user_pdf_url = "https://akashicsoftware.github.io/tclan_files/external_files/driver.pdf"
 # 担当者マップ
 user_mapping = [
-    (datetime(2025,3,31), datetime(2025,4,6), "若林"),
-    (datetime(2025,4,7), datetime(2025,4,13), "荒木"),
-    (datetime(2025,4,14), datetime(2025,4,20), "佐藤"),
-    (datetime(2025,4,21), datetime(2025,4,27), "宮下"),
-    (datetime(2025,4,28), datetime(2025,5,4), "澤"),
-    (datetime(2025,5,5), datetime(2025,5,11), "坂野"),
-    (datetime(2025,5,12), datetime(2025,5,18), "(5/18 遠藤さんから変更で)荒木"),
-    (datetime(2025,5,19), datetime(2025,5,25), "森"),
-    (datetime(2025,5,26), datetime(2025,6,1), "伏黒"),
-    (datetime(2025,6,2), datetime(2025,6,8), "(6/8 小野さんから変更で)森"),
-    (datetime(2025,6,9), datetime(2025,6,15), "(6/11 浅野さんから変更で)遠藤"),
-    (datetime(2025,6,16), datetime(2025,6,22), "若林"),
-    (datetime(2025,6,23), datetime(2025,6,29), "(5/18 -> 6/11遠藤さんから変更で)浅野"),
-    (datetime(2025,6,30), datetime(2025,7,6), "小野"),
-    (datetime(2025,7,7), datetime(2025,7,13), "宮下"),
-    (datetime(2025,7,14), datetime(2025,7,20), "(7/16 澤さんから変更で)荒木"),
-    (datetime(2025,7,21), datetime(2025,7,27), "坂野"),
-    (datetime(2025,7,28), datetime(2025,8,3), "遠藤"),
-    (datetime(2025,8,4), datetime(2025,8,10), "(6/8 森さんから変更で)小野"),
-    (datetime(2025,8,11), datetime(2025,8,17), "伏黒"),
-    (datetime(2025,8,18), datetime(2025,8,24), "(8/21 小野さんから変更で)荒木"),
-    (datetime(2025,8,25), datetime(2025,8,31), "浅野"),
-    (datetime(2025,9,1), datetime(2025,9,7), "若林"),
-    (datetime(2025,9,8), datetime(2025,9,14), "(7/16 荒木さんから変更で)澤"),
-    (datetime(2025,9,15), datetime(2025,9,21), "伏黒"),
-    (datetime(2025,9,22), datetime(2025,9,28), "宮下"),
-    (datetime(2025,9,29), datetime(2025,10,5), "澤"),
-    (datetime(2025,10,6), datetime(2025,10,12), "坂野"),
-    (datetime(2025,10,13), datetime(2025,10,19), "遠藤"),
-    (datetime(2025,10,20), datetime(2025,10,26), "森"),
-    (datetime(2025,10,27), datetime(2025,11,2), "伏黒"),
-    (datetime(2025,11,3), datetime(2025,11,9), "小野"),
-    (datetime(2025,11,10), datetime(2025,11,16), "浅野"),
-    (datetime(2025,11,17), datetime(2025,11,23), "若林"),
-    (datetime(2025,11,24), datetime(2025,11,30), "(8/21 荒木さんから変更で)小野"),
+    (datetime(2026,4,13), datetime(2026,4,19), "森"),
+    (datetime(2026,4,20), datetime(2026,4,26), "若林"),
+    (datetime(2026,4,27), datetime(2026,5,3), "宮下"),
+    (datetime(2026,5,4), datetime(2026,5,10), "小野"),
+    (datetime(2026,5,11), datetime(2026,5,17), "浅野"),
+    (datetime(2026,5,18), datetime(2026,5,24), "澤"),
+    (datetime(2026,5,25), datetime(2026,5,31), "坂野"),
+    (datetime(2026,6,1), datetime(2026,6,7), "遠藤"),
+    (datetime(2026,6,8), datetime(2026,6,14), "伏黒"),
+    (datetime(2026,6,15), datetime(2026,6,21), "森"),
+    (datetime(2026,6,22), datetime(2026,6,28), "若林"),
+    (datetime(2026,6,29), datetime(2026,7,5), "宮下"),
+    (datetime(2026,7,6), datetime(2026,7,12), "小野"),
+    (datetime(2026,7,13), datetime(2026,7,19), "浅野"),
+    (datetime(2026,7,20), datetime(2026,7,26), "澤"),
+    (datetime(2026,7,27), datetime(2026,8,2), "坂野"),
+    (datetime(2026,8,3), datetime(2026,8,9), "遠藤"),
+    (datetime(2026,8,10), datetime(2026,8,16), "伏黒"),
+    (datetime(2026,8,17), datetime(2026,8,23), "森"),
+    (datetime(2026,8,24), datetime(2026,8,30), "若林"),
+    (datetime(2026,8,31), datetime(2026,9,6), "宮下"),
+    (datetime(2026,9,7), datetime(2026,9,13), "小野"),
+    (datetime(2026,9,14), datetime(2026,9,20), "浅野"),
+    (datetime(2026,9,21), datetime(2026,9,27), "澤"),
+    (datetime(2026,9,28), datetime(2026,10,4), "坂野"),
+    (datetime(2026,10,5), datetime(2026,10,11), "遠藤"),
+    (datetime(2026,10,12), datetime(2026,10,18), "伏黒"),
+    (datetime(2026,10,19), datetime(2026,10,25), "森"),
 ]
 
 class DriverNotifier(LineNotifierBase):
@@ -78,7 +71,7 @@ class DriverNotifier(LineNotifierBase):
         """メッセージ作成."""
         # 実行日.
         if self.debug_config.get("is_debug_date", True):
-            today = datetime(2025, 4, 28)
+            today = datetime(2026, 4, 28)
         else:
             today = datetime.today()
 
