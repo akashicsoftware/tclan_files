@@ -49,6 +49,7 @@ user_mapping = [
     (datetime(2026,10,5), datetime(2026,10,11), "遠藤"),
     (datetime(2026,10,12), datetime(2026,10,18), "伏黒"),
     (datetime(2026,10,19), datetime(2026,10,25), "森"),
+    (datetime(2026,10,26), datetime(2026,11,2), "若林"),
 ]
 
 class DriverNotifier(LineNotifierBase):
